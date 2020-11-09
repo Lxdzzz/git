@@ -13,7 +13,7 @@ public class BaseConntroller extends HttpServlet {
         //接收参数
         String action = req.getParameter("action");
         if (action == null) {
-            action = "load";
+            action = "FindAll";
         }
         //处理业务
         try {

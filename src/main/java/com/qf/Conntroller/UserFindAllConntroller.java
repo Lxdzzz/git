@@ -3,10 +3,11 @@ package com.qf.Conntroller;
 import com.qf.Service.Impl.UserServiceImpl;
 import com.qf.pojo.User;
 
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
-
+@WebServlet("/user")
 public class UserFindAllConntroller extends BaseConntroller {
     UserServiceImpl userService = new UserServiceImpl();
 

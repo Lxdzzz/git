@@ -13,7 +13,7 @@ public class UserDaoImpl implements UserDao {
     QueryRunner qr =new QueryRunner(DBtools.getDataSource());
     @Override
     public List<User> UserFindAll() {
-        String sql="select * from user where admin=0";
+        String sql="SELECT * FROM USER where uadmin=0";
         try {
             return  qr.query(sql,new BeanListHandler<User>(User.class));
         } catch (SQLException e) {
