@@ -22,7 +22,11 @@ public class BaseConntroller extends HttpServlet {
             if (obj != null && obj instanceof String) {
                 String url = (String) obj;
                 //响应服务跳转到指定的页面
-                req.getRequestDispatcher(url + ".jsp").forward(req, resp);
+                if(url.startsWith("re")){
+                    resp.sendRedirect(url.substring(3));
+                    return ;
+                } 
+                req.getRequestDispatcher(url+".jsp").forward(req,resp);
             }
         } catch (Exception e) {
             e.printStackTrace();

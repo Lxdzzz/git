@@ -2,7 +2,6 @@ package com.qf.Util;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import com.alibaba.druid.pool.DruidDataSourceFactory;
-
 import java.util.Properties;
 
 

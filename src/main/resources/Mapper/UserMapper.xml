@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--名空间   当前对应的Dao的全限定类名-->
+<mapper namespace="com.qf.Dao.UserDao">
+    <!--  id的属性值 对应dao中的方法名-->
+    <select id="UserFindById" resultType="user">
+    select * from user where uid = #{id}
+    </select>
+    <update id="UserUpdate" parameterType="user">
+    update user  set uname=#{uname},ugender=#{ugender},upass=#{upass},uemail=#{uemail}where uid=#{uid}
+    </update>
+    <insert id="UserAdd" parameterType="user">
+        insert into  user (uname,ugender,upass,uemail,uadmin)value (#{uname},#{ugender},#{upass},#{uemail},0)
+    </insert>
+    <delete id="UserDelete" >
+        delete from user where uid=#{id}
+    </delete>
+</mapper>

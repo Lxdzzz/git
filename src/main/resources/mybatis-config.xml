@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!--mybatis的配置-->
+<configuration>
+    <!--配置properties文件   一定要放在configuration 标签的最顶部  有加载顺序-->
+    <properties resource="db.properties"></properties>
+    <!--为实体类定义别名-->
+    <typeAliases>
+       <!-- 定义一个实体类-->
+       <!-- <typeAlias type="com.qf.pojo.User" alias="user"></typeAlias>-->
+       <!-- 自动扫描包，将原类名作为别名    定义多个实体类-->
+        <package name="com.qf.pojo"/>
+    </typeAliases>
+    <!--当前环境-->
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${driverClassName}"/>
+                <property name="url" value="${url}"/>
+                <property name="username" value="${username}"/>
+                <property name="password" value="${password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <mapper resource="Mapper/UserMapper.xml"/>
+    </mappers>
+</configuration>
