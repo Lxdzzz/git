@@ -26,6 +26,8 @@ public class BaseConntroller extends HttpServlet {
                     resp.sendRedirect(url.substring(3));
                     return ;
                 } 
+                
+                
                 req.getRequestDispatcher(url+".jsp").forward(req,resp);
             }
         } catch (Exception e) {
